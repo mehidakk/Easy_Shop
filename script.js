@@ -132,7 +132,16 @@ const numero = form.querySelector("input[name='numero']").value.trim();
 const wilaya = form.querySelector("select[name='wilaya']").value;
 const baladiya = form.querySelector("select[name='baladiya']").value;
 if (!nom || !prenom || !numero || !wilaya || !baladiya || !selectedOffer) {
-    alert("يرجى ملء جميع الحقول واختيار العرض قبل إرسال الطلب.");
+    
+    const error =document.getElementById("notification-bar-false");
+    notification.style.top = "0";
+
+        // Hide it after 3 seconds
+        setTimeout(() => {
+            notification.style.top = "-60px";
+        }, 3000);
+
+        form.reset();
     return;
 }
 
