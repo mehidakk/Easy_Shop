@@ -171,19 +171,27 @@ document.getElementById("input_form").addEventListener("submit", function(e) {
 
 
 
-// function doPost(e) {
-//   var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Sheet1");
+function doPost(e) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Sheet1");
 
-//   var row = [
-//     e.parameter.name,
-//     e.parameter.email,
-//     e.parameter.quantity,
-//     e.parameter.address,
-//     e.parameter.comments
-//   ];
+  var row = [
+    e.parameter.nom,
+    e.parameter.prenom,
+    e.parameter.numero,
+    e.parameter.wilaya,
+    e.parameter.baladiya,
+    e.parameter["quantité"],
+    new Date()
+  ];
 
-//   sheet.appendRow(row);
-  
-//   return ContentService.createTextOutput("Success");
+  sheet.appendRow(row);
 
-// }
+  return ContentService
+    .createTextOutput("Success")
+    .setMimeType(ContentService.MimeType.TEXT)
+    .setHeaders({
+      "Access-Control-Allow-Origin": "*",  // ⚠️ Allow CORS
+      "Access-Control-Allow-Methods": "POST",
+      "Access-Control-Allow-Headers": "Content-Type"
+    });
+}
