@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="notification-bar">تم إرسال الطلب بنجاح!</div>
+
+    
+<div id="top">
+    
+    <h1> Easy Shop</h1>
+    <h2>BUZZ<span>B</span>GONE</h2>
+    <p>مصيدة البعوض الكهربائية</p>
+    
+</div>
+<div id="order">
+    <h2>اطلب الآن</h2>
+    <h3>التوصيل إلى جميع البلديات</h3>
+</div>
+     
+
+    <form id="input_form">
+       
+        <input type="text" name="nom" placeholder="الاسم">
+        <input type="text" name="prenom" placeholder="اللقب">
+        <input type="text" name="numero" placeholder="رقم الهاتف">
+        <select id="wilaya" name="wilaya" required></select>
+        <select id="baladiya" name="baladiya" required></select>
+        <!-- quantité -->
+        <div id="offers">
+            <button class="offer" type="button">قطعة<br><span class="old_price">2000دج</span><br>1890دج</button>
+            <button class="offer" type="button">قطعتان<br><span class="old_price">3780دج</span><br>3500دج</button>
+
+            <div class="more">
+                <button class="offer" type="button">  3 قطع او اكثر <br><span class="old_price">5250دج</span><br>5100دج</button>
+                <div class="counter">
+                
+                    <button onclick="decrement()" type="button">−</button>
+                    <span id="value">3</span>
+                    <button onclick="increment()" type="button">+</button>
+                </div>
+            </div>
+            
+            
+
+        </div>
+        
+        
+
+    <p>المجموع: <span id="total">0</span> دج</p>
+    
+    <button class="button" type="submit">ارسال الطلب</button>
+        </form>
+        
+     <div id="info"><div class="icons">
+            <img src="pics_icons/payment.png" class="icon">
+            <p>الدفع عند<br> الاستلام</p>
+        </div>
+        
+        <div class="icons" >
+            <img src="pics_icons/deliver.png" class="icon">
+            <p>توصيل<br> 58 ولاية</p>
+        </div>
+        
+        <div class="icons">
+            <img src="pics_icons/handshake.png" class="icon">
+            <p> ارجاع خلال<br> 24 ساعة</p>
+        </div>
+        
+     </div>
+     
+     <div class="description">
+<h3>الوصف</h3>
+     <ul>
+  <li>ودع الحشرات المزعجة إلى الأبد آلة صاعقة ممتازة لقتل البعوض، الذباب والحشرات</li>
+  <li>قابلة للشحن عن طريق USB مما يجعلها قابلة للإستعمال في أي مكان : المنزل، المكتب, الجامعة، و حتى أثناء السفر.</li>
+  <li>آمنة 100% على الاطفال و الحيوانات الأليفة، خالية من المواد الكميائية أو الإشعاعات المضرة</li>
+  <li>تشغيل صامت تماما و بدون رائحة، إستمتع بنوم هادئ بدون أي إزعاج.</li>
+  <li>قابلة للتعليق في أي مكان مثل الأبواب اللمبات.</li>
+  <li>تصميم مقاوم للماء، إستخدمها في أي بيئة بكل راحة.</li>
+  <li>مصباح UV ذكي يجذب الناموس بكفاءة عالية دون أى ضرر ل الإنسان.</li>
+</ul>
+     </div>
+     <div class="demon1">
+        <img src="pics_icons/demons1.jpg" class="demons">
+        <img src="pics_icons/demons2.jpg" class="demons">
+     </div>
+     <div class="demon2">
+        <img src="pics_icons/demons3.webp" class="demons">
+        <img src="pics_icons/dmeons4.jpg" class="demons">
+     </div>
+
+     <div class="contact">
+        <h2>Easy Shop</h2>
+        <h3>namoushop@gmail.com</h3>
+        <img src="pics_icons/instagram.png"></img>
+        <img src="pics_icons/facebook.png"></img>
+     </div>
+
+
+     <script src="script.js"></script>
+      
+</body>
+</html>
