@@ -139,7 +139,7 @@ document.getElementById("input_form").addEventListener("submit", function(e) {
     submitButton.disabled = true;
     submitButton.innerHTML = "جاري الإرسال...";
 
-    fetch("https://script.google.com/macros/s/AKfycbz5RQBh7n6GIP6-cK6I8v0FWPRr86YyvqKoPVsllBo1sM5KPTWehzlICDTDNWfeP_AJZg/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbwsxOHujeTKXLS8at-c7d2934TMbamKoyDjk6B7UF_14v4jB71ua3ITuCx3EA75zosIAA/exec", {
         method: "POST",
         body: formData
     })
