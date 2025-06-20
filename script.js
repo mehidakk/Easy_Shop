@@ -95,6 +95,7 @@ const offers = document.querySelectorAll(".offer");
         console.error("Erreur lors du chargement de algeria_cities.json :", error);
       });
     
+document.getElementById("input_form").addEventListener("submit", function(e) {
 
     
       counterDiv.style.display = "none";
@@ -126,6 +127,18 @@ const offers = document.querySelectorAll(".offer");
 
 document.getElementById("input_form").addEventListener("submit", function(e) {
     e.preventDefault();
+
+const nom = form.querySelector("input[name='nom']").value.trim();
+const prenom = form.querySelector("input[name='prenom']").value.trim();
+const numero = form.querySelector("input[name='numero']").value.trim();
+const wilaya = form.querySelector("select[name='wilaya']").value;
+const baladiya = form.querySelector("select[name='baladiya']").value;
+
+if (!nom || !prenom || !numero || !wilaya || !baladiya || !selectedOffer) {
+    alert("يرجى ملء جميع الحقول واختيار العرض قبل إرسال الطلب.");
+    return;
+}
+
 
     var form = e.target;
     var formData = new FormData(form);
