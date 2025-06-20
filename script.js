@@ -130,7 +130,7 @@ document.getElementById("input_form").addEventListener("submit", function(e) {
 
     var form = e.target;
     var formData = new FormData(form);
-    formData.append("quantité", selectedOffer === "3" ? quantity : selectedOffer);
+    formData.append("quantite", selectedOffer === "3" ? quantity : selectedOffer);
 
     const submitButton = form.querySelector("button[type='submit']");
     const originalText = submitButton.innerHTML;
