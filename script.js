@@ -186,12 +186,18 @@ function doPost(e) {
 
   sheet.appendRow(row);
 
-  return ContentService
-    .createTextOutput("Success")
-    .setMimeType(ContentService.MimeType.TEXT)
-    .setHeaders({
-      "Access-Control-Allow-Origin": "*",  // ⚠️ Allow CORS
-      "Access-Control-Allow-Methods": "POST",
-      "Access-Control-Allow-Headers": "Content-Type"
-    });
+  var output = ContentService.createTextOutput("Success");
+  output.setMimeType(ContentService.MimeType.TEXT);
+
+  // ✅ Override headers using a custom method
+  output.getHeaders = function() {
+    return {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST',
+      'Access-Control-Allow-Headers': 'Content-Type'
+    };
+  };
+
+  return output;
 }
+
