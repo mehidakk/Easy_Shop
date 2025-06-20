@@ -139,7 +139,7 @@ document.getElementById("input_form").addEventListener("submit", function(e) {
     submitButton.disabled = true;
     submitButton.innerHTML = "جاري الإرسال...";
 
-    fetch("https://script.google.com/macros/s/AKfycbyGQYBlozoIWrw9BePkTpgFsJM6pzhEKyzL-Yz92BeummWevJLjd6SbGWTZ4IgtmGHtRA/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbzptAdYyERTqlcfLGpgGkhF4hlmXdLVcAyrAaigD0hFkzIXYE-o8TTDfK_R-OkiS2wE3g/exec", {
         method: "POST",
         body: formData
     })
@@ -170,34 +170,4 @@ document.getElementById("input_form").addEventListener("submit", function(e) {
 });
 
 
-
-function doPost(e) {
-  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Sheet1");
-
-  var row = [
-    e.parameter.nom,
-    e.parameter.prenom,
-    e.parameter.numero,
-    e.parameter.wilaya,
-    e.parameter.baladiya,
-    e.parameter["quantité"],
-    new Date()
-  ];
-
-  sheet.appendRow(row);
-
-  var output = ContentService.createTextOutput("Success");
-  output.setMimeType(ContentService.MimeType.TEXT);
-
-  // ✅ Override headers using a custom method
-  output.getHeaders = function() {
-    return {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'POST',
-      'Access-Control-Allow-Headers': 'Content-Type'
-    };
-  };
-
-  return output;
-}
 
