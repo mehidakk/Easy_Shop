@@ -131,7 +131,7 @@ const prenom = form.querySelector("input[name='prenom']").value.trim();
 const numero = form.querySelector("input[name='numero']").value.trim();
 const wilaya = form.querySelector("select[name='wilaya']").value;
 const baladiya = form.querySelector("select[name='baladiya']").value;
-if (!nom || !prenom || !numero || !wilaya || !baladiya || !selectedOffer) {
+if (!nom || !prenom || !numero || !wilaya || !baladiya) {
     
     const error =document.getElementById("notification-bar-false");
     notification.style.top = "0";
