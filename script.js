@@ -126,6 +126,17 @@ const offers = document.querySelectorAll(".offer");
 
 document.getElementById("input_form").addEventListener("submit", function(e) {
     e.preventDefault();
+const nom = form.querySelector("input[name='nom']").value.trim();
+const prenom = form.querySelector("input[name='prenom']").value.trim();
+const numero = form.querySelector("input[name='numero']").value.trim();
+const wilaya = form.querySelector("select[name='wilaya']").value;
+const baladiya = form.querySelector("select[name='baladiya']").value;
+if (!nom || !prenom || !numero || !wilaya || !baladiya || !selectedOffer) {
+    alert("يرجى ملء جميع الحقول واختيار العرض قبل إرسال الطلب.");
+    return;
+}
+
+
 
     var form = e.target;
     var formData = new FormData(form);
@@ -150,7 +161,7 @@ document.getElementById("input_form").addEventListener("submit", function(e) {
         submitButton.innerHTML = originalText;
 
         // Show the top notification bar
-        const notification = document.getElementById("notification-bar");
+        const notification = document.getElementById("notification-bar-true");
         notification.style.top = "0";
 
         // Hide it after 3 seconds
